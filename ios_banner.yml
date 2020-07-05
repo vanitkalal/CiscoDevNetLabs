@@ -1,0 +1,21 @@
+---
+
+- name: General config
+  
+  hosts: routers
+
+  tasks:
+
+  - name: Add banner
+
+    ios_banner:
+      banner: login
+      text: |
+        NetDevOps fanboy
+      state: present
+
+  - name: Add loopback
+
+    ios_interface:
+      name: Loopback111
+      state: present
